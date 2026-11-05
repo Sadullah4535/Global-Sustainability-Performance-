@@ -2,7 +2,7 @@
 
 Replication materials for Çelik et al. (2025), “Global sustainability performance and regional disparities: A machine learning approach based on the 2025 SDG Index,” *Sustainability*, 17(16), 7411. <https://doi.org/10.3390/su17167411>
 
-The repository contains the study dataset, the original code release (`Codes.py`), and a command-line analysis workflow (`run_replication.py`).
+The dataset is included; no download is required.
 
 ## Run the analysis
 
@@ -25,4 +25,4 @@ python run_replication.py --data path/to/SDG2025.csv --output-dir results
 
 The workflow reports sample counts and runs PCA, K-Means clustering and sensitivity analysis, cluster profiling, ANOVA/MANOVA, Random Forest feature importance, and the six classifier families. It exports the resulting tables and figures, including comparisons with values reported in the paper.
 
-The analysis uses five numeric variables and complete cases. The K-Means baseline uses `k=5`, `random_state=42`, and `n_init=1`; the released code does not specify `n_init`. Sensitivity tables compare `n_init` values of 1, 5, and 10. The runner's command-line options and implementation details are documented in `run_replication.py`.
+The clustering workflow uses the complete cases for `sdg_score`, `spillover_score`, `regional_score`, `population`, and `progress`. It standardizes these variables with `StandardScaler`, then fits PCA and K-Means. The baseline uses `k=5`, `random_state=42`, and `n_init=1`. Sensitivity tables evaluate `k=2–10` with `n_init` values of 1, 5, and 10. Classifier metrics use a stratified 70/30 train/test split with `random_state=42`.
