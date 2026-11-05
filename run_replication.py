@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce the analysis in Çelik et al. (2025) from the bundled CSV.
-
-The release's Python file is a notebook export. This script provides a
-deterministic, command-line entry point while leaving that source file intact.
-"""
+"""Run the sustainability analysis using the bundled SDG2025.csv dataset."""
 
 from __future__ import annotations
 
@@ -71,11 +67,7 @@ def parse_args() -> argparse.Namespace:
         "--n-init",
         type=int,
         default=1,
-        help=(
-            "K-Means initializations for the paper's k=5 baseline. The paper's "
-            "reported silhouette is closest to n_init=1; this is reconstructed "
-            "because the released code does not set n_init."
-        ),
+        help="K-Means initializations for the k=5 baseline (default: 1).",
     )
     return parser.parse_args()
 
