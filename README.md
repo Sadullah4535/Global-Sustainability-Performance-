@@ -2,8 +2,6 @@
 
 This repository contains the data and original code release for Çelik et al. (2025), plus a clean runner for reproducing the main analysis and exporting its figures and tables.
 
-[![Run in Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Sadullah4535/Global-Sustainability-Performance-/blob/main/run_in_colab.ipynb)
-
 Paper: Çelik, S., Öztürk, Ö. F., Akkucuk, U., & Şaşmaz, M. Ü. (2025). “Global sustainability performance and regional disparities: A machine learning approach based on the 2025 SDG Index.” *Sustainability*, 17(16), 7411. <https://doi.org/10.3390/su17167411>
 
 ## Run locally
@@ -22,8 +20,6 @@ The script reads the bundled `SDG2025.csv`; it does not download data. Figures a
 ```bash
 python run_replication.py --data path/to/SDG2025.csv --output-dir results
 ```
-
-The Colab badge opens a launcher notebook. Select **Runtime → Run all**; it clones this repository, installs the pinned dependencies, and runs the same script.
 
 ## What the runner does
 
